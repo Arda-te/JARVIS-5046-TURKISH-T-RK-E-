@@ -1,0 +1,24 @@
+{
+  "name": "jarvis-5046",
+  "version": "1.0.0",
+  "description": "JARVIS 5046 futuristic desktop AI assistant",
+  "main": "main.js",
+  "author": "JARVIS Lab",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.jarvislab.jarvis5046",
+    "productName": "JARVIS 5046",
+    "directories": { "output": "release" },
+    "files": ["main.js", "preload.js", "index.html", "styles.css", "renderer.js", "package.json"],
+    "win": { "target": ["nsis"], "artifactName": "JARVIS-5046-Setup-${version}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "createDesktopShortcut": true, "createStartMenuShortcut": true }
+  }
+}
